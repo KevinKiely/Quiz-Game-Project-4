@@ -16,6 +16,7 @@ padding: 5px;
 margin: 10px;
 text-align:center;
 justify-content: space-between;
+border-radius:10px;
 }
 
 #high-scores{
@@ -31,14 +32,15 @@ background: white;
 width:80%;
 margin: 40px auto;
 border-radius: 10px;
-font-size: 20px;
+border: 3px solid black;
+font-size: 28px;
 }
 
 #start-button{
 font-size: 40px;
 margin-left: 40%;
-margin-top: 10%;
-margin-bottom: 10%;
+margin-top: 5%;
+margin-bottom: 5%;
 
 }
 
@@ -48,9 +50,10 @@ margin-bottom: 10%;
     width: 90%;
     max-width: 800px;
     margin: 100px auto 0;
+    border: 3px solid black;
     border-radius: 10px;
     padding: 30px;
-    display:block;
+    display:none;
     
 }
 
@@ -62,13 +65,15 @@ margin-bottom: 10%;
     padding-bottom: 35px;
 }
 
+/*
 .quiz{
     padding: 20px 0;
+    display:none;
 }
-
+*/
 
 #question-1{
-    display:block;
+    display:none;
 }
 
 #question-2{
@@ -94,14 +99,6 @@ margin-bottom: 10%;
 #question-7{
     display:none;
 }
-
-
-
-
-
-
-
-
 
 .btn-correct{
     background:white;
@@ -137,6 +134,16 @@ background: lightslategray;
 color: white;
 }
 
+#Game-Over{
+    display: block;
+    background:white;
+    width:75%;
+    border-radius:10px;
+    border: 2px solid black;
+    margin: 15% auto;
+    text-align: center;
+    display:none;
+}
 
 
 

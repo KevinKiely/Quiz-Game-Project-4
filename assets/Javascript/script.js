@@ -1,8 +1,42 @@
-var navBar= document.querySelector("navbar");
-var highScores= document.querySelector("high-scores");
-var timeLeft= document.querySelector("timeLeft");
-var score=document.querySelector("score");
-var startMenu=document.querySelector("start-menu");
+var navBar= document.querySelector("#navbar");
+var highScores= document.querySelector("#high-scores");
+var timer= document.querySelector("#timeLeft");
+var score= document.querySelector("#score");
+var startMenu= document.querySelector("#start-menu");
+var startBtn= document.querySelector("#start-button");
+var app= document.querySelector(".app");
+var quiz= document.querySelector(".quiz");
+var correctBtn= document.querySelector("btn-correct");
+var incorrectBtn= document.querySelector("btn-incorrect");
+
+
+
+
+
+var score= 0;
+var timeLeft= 60;
+var questionNumber= 0;
+
+startBtn.addEventListener('click', startGame);
+correctBtn.addEventListener('click',correctAnswer);
+incorrectBtn.addEventListener('click', incorrectAnswer);
+
+
+function startGame(event) {
+    console.log("Game Starting");
+    startMenu.setAttribute("style","display:none");
+    app.setAttribute("style", "display:block");
+    app[0].setAttribute("style", "display:block");
+}
+
+
+function correctAnswer(){
+
+}
+
+function incorrectAnswer() {
+
+}
 
 
 

@@ -1,7 +1,18 @@
+var navBar= document.querySelector("navbar");
+var highScores= document.querySelector("high-scores");
+var timeLeft= document.querySelector("timeLeft");
+var score=document.querySelector("score");
+var startMenu=document.querySelector("start-menu");
+
+
+
+
+
+
+/*
 var start = document.getElementById('start-button');
 var welcome = document.querySelector('.welcome');
 var questionContainer = document.querySelector('.questions-container');
-
 
 // EVENT to trigger game start
 start.addEventListener('click', startGame);
@@ -16,6 +27,14 @@ function startGame(event) {
 
     // we also want to start a TIMER 
 }
+*/
+
+
+
+
+
+
+
 
 
 // Starting Page: Has the navbar, with a score, highscore (local storage), and timer elements. There is a large start button, with some explanation to the rules of the game below it// 

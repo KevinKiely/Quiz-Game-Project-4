@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="./assets/CSS/style.css">
     <title>Module 4- Quiz Game</title>
 </head>
+
 <body>
     <nav id="navbar"> 
-        <button id="high-scores"> High Scores </button>
+        <button id="high-scores-button"> High Scores </button>
         <div id="timeLeft"> </div>
-        <div id="score">  </div>
+        <div id="gameScore"> </div>
     </nav>
 
     <div id="start-menu">
@@ -22,71 +23,26 @@
 
 
     <div class="app">
-        <h1> Coding Quiz Game!</h1>
         <div class="quiz">
+            <h1> Coding Quiz Game!</h1> 
             <div id="question-1">
-                <h2> The correct answer is B</h2>
-                    <button class="btn-incorrect"> Incorrect</button>
-                    <button class="btn-correct"> Correct</button>
-                    <button class="btn-incorrect"> Incorrect</button>
-                    <button class="btn-incorrect"> Incorrect</button>
-            </div>
-
-            <div id="question-2">
-                <h2> Question goes here</h2>
-                    <button class="btn-incorrect"> Answer 1</button>
-                    <button class="btn-correct"> Answer 2</button>
-                    <button class="btn-incorrect"> Answer 3</button>
-                    <button class="btn-incorrect"> Answer 4</button>
-            </div>
-
-            <div id="question-3">
-                <h2> Question goes here</h2>
-                    <button class="btn-incorrect"> Answer 1</button>
-                    <button class="btn-correct"> Answer 2</button>
-                    <button class="btn-incorrect"> Answer 3</button>
-                    <button class="btn-incorrect"> Answer 4</button>
-            </div>
-
-            <div id="question-4">
-                <h2> Question goes here</h2>
-                    <button class="btn-incorrect"> Answer 1</button>
-                    <button class="btn-correct"> Answer 2</button>
-                    <button class="btn-incorrect"> Answer 3</button>
-                    <button class="btn-incorrect"> Answer 4</button>
-            </div>
-
-            <div id="question-5">
-                <h2> Question goes here</h2>
-                    <button class="btn-incorrect"> Answer 1</button>
-                    <button class="btn-correct"> Answer 2</button>
-                    <button class="btn-incorrect"> Answer 3</button>
-                    <button class="btn-incorrect"> Answer 4</button>
-            </div>
-
-            <div id="question-6">
-                <h2> Question goes here</h2>
-                    <button class="btn-incorrect"> Answer 1</button>
-                    <button class="btn-correct"> Answer 2</button>
-                    <button class="btn-incorrect"> Answer 3</button>
-                    <button class="btn-incorrect"> Answer 4</button>
-            </div>
-
-            <div id="question-7">
-                <h2> Question goes here</h2>
-                    <button class="btn-incorrect"> Answer 1</button>
-                    <button class="btn-correct"> Answer 2</button>
-                    <button class="btn-incorrect"> Answer 3</button>
-                    <button class="btn-incorrect"> Answer 4</button>
+                <h2 id="question-text"> </h2>
+                    <button id="answer-1"></button>
+                    <button id="answer-2"> </button>
+                    <button id="answer-3"> </button>
+                    <button id="answer-4"> </button>
             </div>
         </div>
     </div>
 
+
+
     <div id="Game-Over">
         <h1> Game Over!</h1>
-        <p> Score: </p>
-        <input id="Initials"> Enter your Initials </input>
-        <button id="start-button"> Play Again</button>
+        <p id="final-score"></p>
+        <input id="Initials" placeholder="Enter Initials"> </input>
+        
+        <button id="play-again"> Play Again</button>
 
     </div>
 

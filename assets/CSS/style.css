@@ -12,7 +12,7 @@ background: rgb(82, 161, 45);
 color: black;
 align-content: center;
 font-size: 28px; 
-padding: 5px;
+padding: 10px;
 margin: 10px;
 text-align:center;
 justify-content: space-between;
@@ -20,7 +20,7 @@ border-radius:10px;
 }
 
 #high-scores{
-font-size: 20px;
+font-size: 28px;
 }
 
 body{
@@ -56,7 +56,7 @@ margin-bottom: 5%;
     display:none;
     
 }
-
+/*
 .app h1{
     font-size: 28px;
     color: black;
@@ -64,101 +64,46 @@ margin-bottom: 5%;
     border-bottom: 1px black;
     padding-bottom: 35px;
 }
-
-/*
+*/
 .quiz{
     padding: 20px 0;
-    display:none;
-}
-*/
-
-#question-1{
-    display:none;
+    display:block;
 }
 
-#question-2{
-    display:none;
+#answer-1{
+margin: 25px;
+font-size: 18px;
 }
 
-#question-3{
-    display:none;
+#answer-2{
+margin: 25px;
+font-size: 18px;
 }
 
-#question-4{
-    display:none;
+#answer-3{
+margin: 25px;
+font-size: 18px;
 }
 
-#question-5{
-    display:none;
+#answer-4{
+margin: 25px;
+font-size: 18px;
 }
 
-#question-6{
-    display:none;
-}
 
-#question-7{
-    display:none;
-}
 
-.btn-correct{
-    background:white;
-    color: black;
-    font-weight:400;
-    width:100%;
-    border: 2px solid black;
-    padding: 12px;
-    margin: 8px;
-    text-align: left;
-    transition: all 0.4s;
-}
 
-.btn-incorrect{
-    background:white;
-    color: black;
-    font-weight:400;
-    width:100%;
-    border: 2px solid black;
-    padding: 12px;
-    margin: 8px;
-    text-align: left;
-    transition: all 0.4s;
-}
 
-.btn-correct:hover{
-background: lightslategray;
-color: white;
-}
 
-.btn-incorrect:hover{
-background: lightslategray;
-color: white;
-}
+
+
 
 #Game-Over{
-    display: block;
-    background:white;
-    width:75%;
-    border-radius:10px;
-    border: 2px solid black;
-    margin: 15% auto;
-    text-align: center;
-    display:none;
+display: none;
+background:white;
+width:75%;
+border-radius:10px;
+border: 2px solid black;
+margin: 15% auto;
+text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-.hide {
-    display: none; 
-    visibility: hidden;
-}
-/*

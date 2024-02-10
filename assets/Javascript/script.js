@@ -52,20 +52,35 @@ var questionNumber= 0;
 
 
 startBtn.addEventListener('click', startGame);
+playAgain.addEventListener('click', startGame);
 answerOne.addEventListener('click',checkAnswer);
 answerTwo.addEventListener('click',checkAnswer);
 answerThree.addEventListener('click',checkAnswer);
 answerFour.addEventListener('click',checkAnswer);
 
 
+function endGame() {
+
+}
+
+
 function setQuestion() {
+console.log(questions[questionNumber]);
+if (questions[questionNumber]===undefined) {
+    console.log("Game Over!");
+    app.setAttribute("style","display:none");
+    quiz.setAttribute("style", "display:none");
+    gameOver.setAttribute("style","display:block");
+    endGame();
+    
+} else {
 questionText.textContent=questions[questionNumber].title;
 answerOne.textContent=questions[questionNumber].options[0];
 answerTwo.textContent=questions[questionNumber].options[1];
 answerThree.textContent=questions[questionNumber].options[2];
 answerFour.textContent= questions[questionNumber].options[3];
 }
-
+}
 
 
 
@@ -81,8 +96,8 @@ function startTimer() {
             console.log("Game Over!");
             app.setAttribute("style", "display:none");
             quiz.setAttribute("style", "display:none");
-
             gameOver.setAttribute("style","display:block");
+            endGame();
         }
     }, 1000);
 }

@@ -92,12 +92,6 @@ font-size: 18px;
 
 
 
-
-
-
-
-
-
 #Game-Over{
 display: none;
 background:white;
@@ -106,4 +100,26 @@ border-radius:10px;
 border: 2px solid black;
 margin: 15% auto;
 text-align: center;
+}
+
+#high-scores{
+    display:block;
+    align-content: center;
+    background:white;
+    width:70%;
+    padding: 5%;
+    border-radius:10px;
+    border:3px solid black;
+    margin:10%;
+    text-align:center;
+
+}
+
+#top-five{
+    margin:5px;
+}
+
+#main-menu-button{
+    font-size: 32px;
+    align-self: center;
 }

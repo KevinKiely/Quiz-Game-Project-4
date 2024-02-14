@@ -103,7 +103,7 @@ text-align: center;
 }
 
 #high-scores{
-    display:block;
+    display:none;
     align-content: center;
     background:white;
     width:70%;

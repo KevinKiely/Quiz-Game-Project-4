@@ -15,6 +15,12 @@ var gameOver= document.querySelector("#Game-Over");
 var highScoresBtn= document.querySelector("#high-scores-button");
 var highScoresDisplay= document.querySelector("#high-scores");
 var goToMainMenuBtn= document.querySelector("#main-menu-button");
+var scoreOne=document.querySelector("#score-one");
+var scoreTwo=document.querySelector("#score-two");
+var scoreThree=document.querySelector("#score-three");
+var scoreFour=document.querySelector("#score-four");
+var scoreFive=document.querySelector("#score-five");
+
 
 
 
@@ -47,16 +53,6 @@ var questions= [
 ];
 
 
-var finalScores= [
-    {
-        initials: '',
-        finalScore: '',
-}
-
-
-
-];
-
 //Universal Variables
 var score= 0;
 var timeLeft= 60;
@@ -77,19 +73,28 @@ highScoresBtn.addEventListener('click',checkScores);
 
 function checkScores() {
 
+
     app.setAttribute("style","display:none");
     quiz.setAttribute("style", "display:none");
     startMenu.setAttribute("style","display:none");
     gameOver.setAttribute("style","display:none");
+    scoreOne.textContent= questions[3].title;
+    scoreTwo.textContent= questions[3].title;
+    scoreThree.textContent= questions[3].title;
+    scoreFour.textContent= questions[3].title;
+    scoreFive.textContent= questions[3].title;
+
+
     highScoresDisplay.setAttribute("style","display:block");
-
-
-    /*
-    highScoreOne.textContent= `${highScores[0].initials} = ${highScores[0].finalScore}`
-    */
-
-
 }
+
+//This will submit the final score with initials, add it to the finalscores array, and stringify it for local storage
+
+
+
+
+
+
 
 
 
@@ -134,9 +139,6 @@ answerThree.textContent=questions[questionNumber].options[2];
 answerFour.textContent= questions[questionNumber].options[3];
 }
 }
-
-
-
 
 //Starts the timer
 function startTimer() {

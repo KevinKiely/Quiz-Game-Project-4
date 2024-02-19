@@ -21,7 +21,9 @@ var scoreThree=document.querySelector("#score-three");
 var scoreFour=document.querySelector("#score-four");
 var scoreFive=document.querySelector("#score-five");
 
-
+//This is to save your final score
+var initials= document.querySelector("#Initials");
+var submitBtn= document.querySelector("#submit-score");
 
 
 var questions= [
@@ -52,6 +54,31 @@ var questions= [
     },
 ];
 
+var topFive= [
+    {
+        initials: `XX`,
+        finalScore: 0,
+    },
+    {
+        initials: `XX`,
+        finalScore: 0,
+    },
+    {
+        initials: `XX`,
+        finalScore: 0,
+    },
+    {
+        initials: `XX`,
+        finalScore: 0,
+    },
+    {
+        initials: `XX`,
+        finalScore: 0,
+    },
+    
+
+]
+
 
 //Universal Variables
 var score= 0;
@@ -72,44 +99,93 @@ answerFour.addEventListener('click',checkAnswer);
 highScoresBtn.addEventListener('click',checkScores);
 
 function checkScores() {
-
+    // grab localStorage stored data
+    // convert it to JS
 
     app.setAttribute("style","display:none");
     quiz.setAttribute("style", "display:none");
     startMenu.setAttribute("style","display:none");
     gameOver.setAttribute("style","display:none");
-    scoreOne.textContent= questions[3].title;
-    scoreTwo.textContent= questions[3].title;
-    scoreThree.textContent= questions[3].title;
-    scoreFour.textContent= questions[3].title;
-    scoreFive.textContent= questions[3].title;
-
-
     highScoresDisplay.setAttribute("style","display:block");
+    
+    let topScores= localStorage.getItem('topfive');
+    console.log (typeof topScores);
+    console.log (topScores);
+    console.log (jsArray);
+    
+
+/*
+    scoreOne.textContent= `${jsArray}`
+    scoreTwo.textContent= jsArray[1].finalScore;
+    scoreThree.textContent= jsArray[2].finalScore;
+    scoreFour.textContent= jsArray[3].finalScore;
+    scoreFive.textContent= jsArray[4].finalScore;
+*/
 }
 
 //This will submit the final score with initials, add it to the finalscores array, and stringify it for local storage
 
+submitBtn.addEventListener('click',saveScore);
+
+function saveScore() {
+    console.log(score);
+   /* let storedData;
+    // IF we have localStorage --> GRAB that DATA
+    if(!localStorage.getItem('topfive')) {
+        localStorage.setItem('topfive', JSON.stringify(topFive));
+    } else {
+        storedData = localStorage.getItem('topfive');
+    }
+    */
+    // IF NOT --> CREATE loaclStorage Data
+
+    // Where or WHEN is the initial dataset created? 
+
+    //let initalDataset = [];
+
+    localStorage.setItem('topfive', JSON.stringify(topFive));
+    let storedData = localStorage.getItem('topfive');
+    
+    // We need to caputer USER input (user initials) (?)
+    
+    // How should our DATA be constructed? 
+    // highscore   -- { name: 'test', score: 90 }
+    // localStorage --> [{}, {}, {}]
+    //console.log(initials.value);
+    
+    let finalScore = {
+        initials: initials.value,
+        finalScore: score,
+    }
+    console.log("new Score: ", finalScore);
+    
+    let jsArray = JSON.parse(storedData);
+    console.log (jsArray);
+    console.log (typeof jsArray);
+
+    jsArray.unshift(finalScore);
+    console.log(jsArray);
+
+    localStorage.setItem('topfive', JSON.stringify(jsArray));
+    // How do we ulitize localstorage
+    // beacuase the BROWSER only understands STRING (JSON) DATA
+
+    // what is the data type of our highscore object? 
+    // we start with a JS object 
+
+    // IF we already have localtorage
+    // we need to GRAB the EXISTING DATA in localStorage
 
 
+    // Q --> What type is the data we grabbed from localStorage (?)  --> String
 
+    // we need to PARSE --> convert data into JS array
 
+    // We can ADD/REMOVE/MANIPULATE the NEW data 
 
+    // Once the new data is added --> Convert it back and WRITE it to the BROWSER
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 // Returns to the main menu from the HIGHSCORES table
 goToMainMenuBtn.addEventListener('click',goToMain);
@@ -119,7 +195,6 @@ function goToMain() {
     gameOver.setAttribute("style","display:none");
 
 }
-
 
 //Checks to see if there are any more questions, terminates the game if not//
 function setQuestion() {

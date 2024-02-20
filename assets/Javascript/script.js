@@ -108,50 +108,43 @@ function checkScores() {
     gameOver.setAttribute("style","display:none");
     highScoresDisplay.setAttribute("style","display:block");
     
-    let topScores= localStorage.getItem('topfive');
-    console.log (typeof topScores);
-    console.log (topScores);
-    console.log (jsArray);
-    
+    let scoreBoard = localStorage.getItem('topfive');
+    console.log (scoreBoard);
+    console.log (typeof scoreBoard);
+    let scoresArray= JSON.parse(scoreBoard);
+    console.log (scoresArray);
+    console.log (typeof scoresArray);
 
-/*
-    scoreOne.textContent= `${jsArray}`
-    scoreTwo.textContent= jsArray[1].finalScore;
-    scoreThree.textContent= jsArray[2].finalScore;
-    scoreFour.textContent= jsArray[3].finalScore;
-    scoreFive.textContent= jsArray[4].finalScore;
-*/
+    
+    scoreOne.textContent= `${scoresArray[0].initials} = ${scoresArray[0].finalScore}`;
+    scoreTwo.textContent= `${scoresArray[1].initials} = ${scoresArray[1].finalScore}`;
+    scoreThree.textContent= `${scoresArray[2].initials} = ${scoresArray[2].finalScore}`;
+    scoreFour.textContent= `${scoresArray[3].initials} = ${scoresArray[3].finalScore}`;
+    scoreFive.textContent= `${scoresArray[4].initials} = ${scoresArray[4].finalScore}`;
 }
 
-//This will submit the final score with initials, add it to the finalscores array, and stringify it for local storage
 
 submitBtn.addEventListener('click',saveScore);
 
 function saveScore() {
     console.log(score);
-   /* let storedData;
-    // IF we have localStorage --> GRAB that DATA
+  
     if(!localStorage.getItem('topfive')) {
         localStorage.setItem('topfive', JSON.stringify(topFive));
     } else {
         storedData = localStorage.getItem('topfive');
     }
-    */
+
     // IF NOT --> CREATE loaclStorage Data
 
     // Where or WHEN is the initial dataset created? 
 
     //let initalDataset = [];
 
+    /*
     localStorage.setItem('topfive', JSON.stringify(topFive));
     let storedData = localStorage.getItem('topfive');
-    
-    // We need to caputer USER input (user initials) (?)
-    
-    // How should our DATA be constructed? 
-    // highscore   -- { name: 'test', score: 90 }
-    // localStorage --> [{}, {}, {}]
-    //console.log(initials.value);
+    */
     
     let finalScore = {
         initials: initials.value,
@@ -163,25 +156,18 @@ function saveScore() {
     console.log (jsArray);
     console.log (typeof jsArray);
 
-    jsArray.unshift(finalScore);
+    jsArray.push(finalScore);
+    console.log(jsArray);
+
+    jsArray.sort(function(a,b){
+        return b.finalScore-a.finalScore;
+    });
+
     console.log(jsArray);
 
     localStorage.setItem('topfive', JSON.stringify(jsArray));
-    // How do we ulitize localstorage
-    // beacuase the BROWSER only understands STRING (JSON) DATA
-
-    // what is the data type of our highscore object? 
-    // we start with a JS object 
-
     // IF we already have localtorage
     // we need to GRAB the EXISTING DATA in localStorage
-
-
-    // Q --> What type is the data we grabbed from localStorage (?)  --> String
-
-    // we need to PARSE --> convert data into JS array
-
-    // We can ADD/REMOVE/MANIPULATE the NEW data 
 
     // Once the new data is added --> Convert it back and WRITE it to the BROWSER
 

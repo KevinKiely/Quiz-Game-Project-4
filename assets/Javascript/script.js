@@ -125,10 +125,8 @@ function checkScores() {
 
 
 submitBtn.addEventListener('click',saveScore);
-
 function saveScore() {
     console.log(score);
-  
     if(!localStorage.getItem('topfive')) {
         localStorage.setItem('topfive', JSON.stringify(topFive));
     } else {
@@ -136,15 +134,8 @@ function saveScore() {
     }
 
     // IF NOT --> CREATE loaclStorage Data
-
     // Where or WHEN is the initial dataset created? 
-
     //let initalDataset = [];
-
-    /*
-    localStorage.setItem('topfive', JSON.stringify(topFive));
-    let storedData = localStorage.getItem('topfive');
-    */
     
     let finalScore = {
         initials: initials.value,
@@ -166,11 +157,8 @@ function saveScore() {
     console.log(jsArray);
 
     localStorage.setItem('topfive', JSON.stringify(jsArray));
-    // IF we already have localtorage
-    // we need to GRAB the EXISTING DATA in localStorage
 
     // Once the new data is added --> Convert it back and WRITE it to the BROWSER
-
 }
 
 // Returns to the main menu from the HIGHSCORES table
@@ -222,6 +210,7 @@ function startTimer() {
 //Starts the game
 function startGame(event) {
     console.log("Game Starting;");
+
     startTimer();
     startMenu.setAttribute("style", "display:none");
     highScoresDisplay.setAttribute("style","display:none");
